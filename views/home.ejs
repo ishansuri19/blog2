@@ -1,0 +1,23 @@
+<!-- Dont write body tag as it is included in header file  -->
+<%- include('partials/header') ; %>
+
+    <h1>Home</h1>
+<p><%= startingContent %></p>
+
+    
+ <!-- for(var i=0 ;i<posts.length ; i++){ 
+    console.log(posts[i].title) };
+   console.log(post.title);
+ -->
+ 
+<% posts.forEach(function(post){ %>
+   <h1> <%= post.title %> </h1>
+   <p> 
+       <%= post.content.substring(0,100) + " ..." %> 
+       <a href="/posts/<%=post.title%>">Read More</a>
+   </p> 
+<% }); %>
+
+<!-- console.log(posts);  -->
+
+  <%- include('partials/footer') ; %>
